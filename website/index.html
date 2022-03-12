@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div id='info'>
+      <div id='panel'>
+        <div id='x' onclick="infoToggle()"></div>
+      </div>
+    </div>
+    <div class='bar'>
+      <div id='infoButton' onclick="infoToggle()">📜</div>
+      <div id='emojiLeft'>😀</div>
+      <div id='title'>emoji streak</div>
+      <div id='emojiRight'>😀</div>
+      <div id='mode'>🌙</div>
+    </div>
+    <div id='content'>
+      <p id='answer'>the answer was <span id='one'></span></p>
+      <button type='button' onclick='startRound()' id='button'>Start</button>
+      <div id='game'>
+        <p id='score'></p>
+        <p id='emoji'></p>
+        <input id='input' autocomplete='off'></input>
+        <p id='timer'></p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
