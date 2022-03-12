@@ -1,2 +1,2 @@
-# emojiStreak
+# emoji streak
 gaming gamer gameriety
