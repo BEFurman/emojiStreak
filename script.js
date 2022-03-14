@@ -1,5 +1,5 @@
 const emojiList = ['😀', '😁', '😂', '🤣', '😄', '😅', '😆', '😉', '😊', '😋', '😎', '😍', '😘', '🥰', '😗', '😙', '🥲', '😚', '🙂', '🤗', '🤩', '🤔', '🤨', '😐', '😑', '😶', '🙄', '😏', '😣', '😥', '🤐', '😯', '😪', '😫', '🥱', '😴', '😌', '😛', '😜', '😝', '😒', '🤤', '😓', '😔', '😕', '🙃', '🤑', '😲', '☹️', '🙁', '😖', '😞', '😟', '😤', '😢', '😭', '😦', '😧', '😨', '😩', '🤯', '😬', '😱', '🥵', '🥶', '😳', '🤪', '😵', '🥴', '😠', '😡', '🤬', '😷', '🤒', '🤕', '🤢', '🤮', '🤧', '😇', '🥳', '🥺', '🤠', '🤥', '🤫', '🤭', '🧐', '🤓', '🤡', '😈', '👿', '💩', '🐵'];
-const answerList = ['grinning face', 'beaming face with smiling eyes', 'face with tears of joy', 'rolling on the floor laughing', 'grinning face with smiling eyes', 'grinning face with sweat', 'grinning squinting face', 'winking face', 'smiling face with smiling eyes', 'face savoring food', 'smiling face with sunglasses', 'smiling face with heart-eyes', 'face blowing a kiss', 'smiling face with hearts', 'kissing face', 'kissing face with smiling eyes', 'smiling face with tear', 'kissing face with closed eyes'];
+const answerList = ['grinning face', 'beaming face with smiling eyes', 'face with tears of joy', 'rolling on the floor laughing', 'grinning face with smiling eyes', 'grinning face with sweat', 'grinning squinting face', 'winking face', 'smiling face with smiling eyes', 'face savoring food', 'smiling face with sunglasses', 'smiling face with heart-eyes', 'face blowing a kiss', 'smiling face with hearts', 'kissing face', 'kissing face with smiling eyes', 'smiling face with tear', 'kissing face with closed eyes', 'slightly smiling face', 'hugging face', 'star-struck', 'thinking face', 'face with raised eyebrow', 'neutral face', 'expressionless face', 'face without mouth', 'face with rolling eyes', 'smirking face', 'persevering face'];
 var timerStop = 0;
 function emojiSwap() {
   let num1 = Math.ceil((emojiList.length) * Math.random());
@@ -29,6 +29,7 @@ function startRound() {
   document.getElementById('button').style.display = 'none';
   document.getElementById('game').style.display = 'flex';
   document.getElementById('emoji').style.display = 'block';
+  document.getElementById('input').value = '';
   document.getElementById('input').style.display = 'block';
   document.getElementById('timer').style.display = 'block';
   document.getElementById('answer').style.display = 'none';
