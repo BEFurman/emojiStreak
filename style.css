@@ -59,6 +59,7 @@ body {
   100% {transform: rotate(360deg);}
 }
 div {
+  text-align: center;
   align-items: center;
   font-family: cursive;
 }
@@ -73,7 +74,7 @@ div {
 button {
   color: var(--text);
   background-color: var(--bar-bg);
-  border: 1vh var(--text) solid;
+  border: none;
   border-radius: 7.5vh;
   font-family: cursive;
   height: 15vh;
