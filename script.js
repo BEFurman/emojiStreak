@@ -1,5 +1,5 @@
 const emojiList = ['😀', '😁', '😂', '🤣', '😄', '😅', '😆', '😉', '😊', '😋', '😎', '😍', '😘', '🥰', '😗', '😙', '🥲', '😚', '🙂', '🤗', '🤩', '🤔', '🤨', '😐', '😑', '😶', '🙄', '😏', '😣', '😥', '🤐', '😯', '😪', '😫', '🥱', '😴', '😌', '😛', '😜', '😝', '😒', '🤤', '😓', '😔', '😕', '🙃', '🤑', '😲', '☹️', '🙁', '😖', '😞', '😟', '😤', '😢', '😭', '😦', '😧', '😨', '😩', '🤯', '😬', '😱', '🥵', '🥶', '😳', '🤪', '😵', '🥴', '😠', '😡', '🤬', '😷', '🤒', '🤕', '🤢', '🤮', '🤧', '😇', '🥳', '🥺', '🤠', '🤥', '🤫', '🤭', '🧐', '🤓', '🤡', '😈', '👿', '💩', '🐵'];
-const answerList = ['grinning face', 'beaming face with smiling eyes', 'face with tears of joy', 'rolling on the floor laughing', 'grinning face with smiling eyes', 'grinning face with sweat', 'grinning squinting face', 'winking face', 'smiling face with smiling eyes', 'face savoring food', 'smiling face with sunglasses', 'smiling face with heart-eyes', 'face blowing a kiss', 'smiling face with hearts', 'kissing face', 'kissing face with smiling eyes', 'smiling face with tear', 'kissing face with closed eyes', 'slightly smiling face', 'hugging face', 'star-struck', 'thinking face', 'face with raised eyebrow', 'neutral face', 'expressionless face', 'face without mouth', 'face with rolling eyes', 'smirking face', 'persevering face'];
+const answerList = ['grinning face', 'beaming face with smiling eyes', 'face with tears of joy', 'rolling on the floor laughing', 'grinning face with smiling eyes', 'grinning face with sweat', 'grinning squinting face', 'winking face', 'smiling face with smiling eyes', 'face savoring food', 'smiling face with sunglasses', 'smiling face with heart-eyes', 'face blowing a kiss', 'smiling face with hearts', 'kissing face', 'kissing face with smiling eyes', 'smiling face with tear', 'kissing face with closed eyes', 'slightly smiling face', 'hugging face', 'star-struck', 'thinking face', 'face with raised eyebrow', 'neutral face', 'expressionless face', 'face without mouth', 'face with rolling eyes', 'smirking face', 'persevering face', 'sad but relieved face', 'zipper-mouth face', 'hushed face', 'sleepy face', 'tired face', 'yawning face', 'sleeping face', 'relieved face', 'face with tongue', 'winking face with tongue', 'squinting face with tongue', 'unamused face', 'drooling face'];
 var timerStop = 0;
 function emojiSwap() {
   let num1 = Math.ceil((emojiList.length) * Math.random());
@@ -14,7 +14,15 @@ function emojiSwap() {
   }, 300);
 };
 function darkMode() {
-
+  let div = document.getElementById('mode');
+  if (div.innerHTML == '🌇') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    div.innerHTML = '🌃';
+  }
+  else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    div.innerHTML = '🌇';
+  }
 };
 function infoToggle() {
   var vis = document.getElementById('info');
@@ -67,12 +75,26 @@ function betterThanChex() {
   var magicIndex = emojiList.findIndex(checkEmoghi);
   console.log(answerList[magicIndex]);
   console.log(document.getElementById('input').value);
-  if (answerList[magicIndex] == document.getElementById('input').value) {
+  if (answerList[magicIndex] == document.getElementById('input').value.toLowerCase()) {
     victoryLap();
   }
 };
 function checkEmoghi(emoghi) {
   return emoghi == document.getElementById('emoji').innerHTML;
+}
+function difficulty() {
+  const difficulties = ['🎯', '⏳', '🏅'];
+  var diff = difficulties.findIndex(checkDiff);
+  if (diff == 2) {
+    diff = 0;
+  }
+  else {
+    diff++;
+  }
+  document.getElementById('difficulty').innerHTML = difficulties[diff];
+}
+function checkDiff(diff) {
+  return diff == document.getElementById('difficulty').innerHTML;
 }
 function victoryLap() {
   document.getElementById('input').value = '';
