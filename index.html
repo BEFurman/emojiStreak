@@ -8,7 +8,10 @@
   <body>
     <div id='info'>
       <div id='panel'>
-        <div id='x' onclick="infoToggle()"></div>
+        <div id='x' onclick="infoToggle()">
+          <div a></div>
+          <div b></div>
+        </div>
       </div>
     </div>
     <div class='bar'>
@@ -22,7 +25,7 @@
     </div>
     <div id='content'>
       <p id='answer'>the answer was <span id='one'></span></p>
-      <button type='button' onclick='startRound()' id='button'>Start</button>
+      <button type='button' onclick='startRound()' id='button' style="display: block">Start</button>
       <div id='game'>
         <p id='score'></p>
         <p id='emoji'></p>

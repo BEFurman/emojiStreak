@@ -82,7 +82,7 @@ function betterThanChex() {
   console.log(answerList[magicIndex]);
   console.log(document.getElementById('input').value);
   if (answerList[magicIndex] == document.getElementById('input').value.toLowerCase()) {
-    if (document.getElementById('difficulty'.innerHTML == '⏳')) {
+    if (document.getElementById('difficulty').innerHTML == '⏳') {
       timerLap();
     }
     else {
@@ -96,11 +96,13 @@ function checkEmoghi(emoghi) {
 function difficulty() {
   const difficulties = ['🎯', '⏳', '🏅'];
   var diff = difficulties.findIndex(checkDiff);
-  if (diff == 2) {
-    diff = 0;
-  }
-  else {
-    diff++;
+  if (document.getElementById('button').style.display == 'block') {
+    if (diff == 2) {
+      diff = 0;
+    }
+    else {
+      diff++;
+    }
   }
   document.getElementById('difficulty').innerHTML = difficulties[diff];
 }
