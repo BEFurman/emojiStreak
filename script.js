@@ -51,12 +51,21 @@ function startRound() {
   if (difficulty == '⏳') {
     timer(61);
   }
+  else if (difficulty == '🎯') {
+    timer(16);
+  }
   else {
     timer(11);
   }
 };
 function timer(i) {
   if (i > 1 && timerStop == 0) {
+    if (i == 6 && document.getElementById('difficulty').innerHTML == '🎯') {
+      document.getElementById('answer').style.display = 'block';
+      document.getElementById('answer').innerHTML = 'answer: ' + answerList[emojiList.findIndex(checkEmoghi)];
+      document.getElementById('emoji').style.margin = '1vh';
+      document.getElementById('input').style.margin = '1vh';
+    }
     document.getElementById('timer').innerHTML = i - 1;
     setTimeout(function () {
       timer(i - 1);
@@ -64,7 +73,13 @@ function timer(i) {
   }
   else if (timerStop == 1) {
     timerStop = 0;
-    timer(11);
+    console.log(document.getElementById('difficulty').innerHTML == '🏅');
+    if (document.getElementById('difficulty').innerHTML == '🏅') {
+      timer(11);
+    }
+    else {
+      timer(16);
+    }
   }
   else {
     document.getElementById('button').style.display = 'block';
@@ -74,7 +89,9 @@ function timer(i) {
     document.getElementById('answer').style.display = 'block';
     var magicIndex = emojiList.findIndex(checkEmoghi);
     document.getElementById('score').innerHTML = 'your score was ' + document.getElementById('two').innerHTML;
-    document.getElementById('one').innerHTML = answerList[magicIndex];
+    document.getElementById('answer').innerHTML = 'the answer was ' + answerList[magicIndex];
+    document.getElementById('emoji').style.margin = '2vh';
+    document.getElementById('input').style.margin = '2vh';
   }
 };
 function betterThanChex() {
